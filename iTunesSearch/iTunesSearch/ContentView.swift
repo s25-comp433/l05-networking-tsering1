@@ -41,7 +41,7 @@ struct ContentView: View {
         }
         
         do {
-            let (data,_) = try await URLSession.shared.data(from: url)
+            let (data, _) = try await URLSession.shared.data(from: url)
             if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
                 results = decodedResponse.results
             }
